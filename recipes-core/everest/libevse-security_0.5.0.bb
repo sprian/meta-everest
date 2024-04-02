@@ -8,8 +8,8 @@ inherit cmake
 
 S = "${WORKDIR}/git"
 
-# tag git
-SRCREV = "bce1ba42e0b39f56d537c68d7c3a9419b711c00b"
+# tag 0.5.0
+SRCREV = "4a4cf5a204cf5508124722f46273eccfe83c105e"
 
 DEPENDS = "\
     date \
