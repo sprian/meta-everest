@@ -26,7 +26,7 @@ DEPENDS = " \
     libocpp \
     libfsm \
     liblog \
-    libmodbus \
+    everest-libmodbus \
     libsunspec \
     libslac \
     libevent \
