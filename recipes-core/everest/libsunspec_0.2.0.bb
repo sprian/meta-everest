@@ -10,7 +10,7 @@ DEPENDS = "\
     boost \
     nlohmann-json \
     liblog \
-    libmodbus \
+    everest-libmodbus \
 "
 
 S = "${WORKDIR}/git"

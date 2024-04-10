@@ -1,13 +1,13 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https \
+SRC_URI = "git://github.com/EVerest/everest-core.git;branch=release/2024.3.0;protocol=https \
            file://everest.service \
            "
 
 S = "${WORKDIR}/git"
 
-SRCREV = "3970ee3d85cad194e4efd52de7f84bc3b13503be"
+SRCREV = "c057036c110abf4d291cc85aff805fe9948fbfd0"
 
 do_compile[network] = "1"
 
@@ -26,7 +26,7 @@ DEPENDS = " \
     libocpp \
     libfsm \
     liblog \
-    libmodbus \
+    everest-libmodbus \
     libsunspec \
     libslac \
     libevent \
