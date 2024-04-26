@@ -7,15 +7,15 @@ inherit cmake
 
 S = "${WORKDIR}/git"
 
-# tag 0.10.0
-SRCREV = "e1ae0bcdb7d4bbfc980f3056f91b8e129147c204"
+# tag 0.11.0
+SRCREV = "c0f942ee267e1cac92ff4ce162384afdee01e977"
 
 DEPENDS = "\
     everest-cmake \
     boost \
     sqlite3 \
     openssl \
-    websocketpp \
+    libwebsockets \
     nlohmann-json \
     json-schema-validator \
     libfsm \
