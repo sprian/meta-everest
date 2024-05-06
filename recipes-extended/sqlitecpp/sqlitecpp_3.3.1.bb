@@ -1,7 +1,7 @@
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=3d149a8cb6c7dab01d788f477294cebc"
 
-SRC_URI = "git://@github.com/SRombauts/SQLiteCpp.git;branch=master;protocol=https"
+SRC_URI = "git://github.com/SRombauts/SQLiteCpp.git;branch=master;protocol=https"
 
 inherit cmake
 
