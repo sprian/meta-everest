@@ -10,10 +10,11 @@ SRCREV = "fe6086c12679d8744c02fa03e83e75feca2413d8"
 
 S = "${WORKDIR}/git"
 
-FILES:${PN} += "${datadir}"
-FILES:${PN} += "${datadir}/SQLiteCPP"
-FILES:${PN} += "${datadir}/SQLiteCPP/*"
+FILES:${PN}-dev += "${datadir}"
 
 DEPENDS += "sqlite3"
 
-EXTRA_OECMAKE += "-DSQLITECPP_INTERNAL_SQLITE=OFF"
+EXTRA_OECMAKE += " \
+    -DSQLITECPP_INTERNAL_SQLITE=OFF \
+    -DBUILD_SHARED_LIBS=ON \
+"
