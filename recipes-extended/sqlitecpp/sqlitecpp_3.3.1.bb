@@ -7,7 +7,6 @@ inherit cmake
 
 # tag 3.3.1
 SRCREV = "fe6086c12679d8744c02fa03e83e75feca2413d8" 
-PR = "r0"
 
 S = "${WORKDIR}/git"
 
