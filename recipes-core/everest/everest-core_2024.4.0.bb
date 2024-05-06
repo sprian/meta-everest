@@ -27,7 +27,6 @@ DEPENDS = " \
     libfsm \
     liblog \
     everest-libmodbus \
-    libsunspec \
     libslac \
     libevent \
     libevse-security \
