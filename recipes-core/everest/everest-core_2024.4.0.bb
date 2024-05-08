@@ -1,13 +1,13 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "git://github.com/EVerest/everest-core.git;branch=release/2024.3.0;protocol=https \
+SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https \
            file://everest.service \
            "
 
 S = "${WORKDIR}/git"
 
-SRCREV = "c057036c110abf4d291cc85aff805fe9948fbfd0"
+SRCREV = "f1ad5ccf33de21e7cb507f6e421bfd3930534630"
 
 do_compile[network] = "1"
 
@@ -34,6 +34,7 @@ DEPENDS = " \
     mbedtls \
     openv2g \
     curl \
+    sqlitecpp \
 "
 
 RDEPENDS:${PN} += "openv2g libevent mbedtls"

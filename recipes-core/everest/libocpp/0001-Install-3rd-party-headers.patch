@@ -1,0 +1,35 @@
+From cc7dea1523d1aabe4077ad07d53638681e3d5e22 Mon Sep 17 00:00:00 2001
+From: Kai-Uwe Hermann <kai-uwe.hermann@pionix.de>
+Date: Fri, 26 Apr 2024 19:13:31 +0200
+Subject: [PATCH] Install 3rd party headers
+
+Signed-off-by: Kai-Uwe Hermann <kai-uwe.hermann@pionix.de>
+---
+ CMakeLists.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f7df741..cd1288d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -73,6 +73,11 @@ if (OCPP_INSTALL)
+         TYPE INCLUDE
+     )
+ 
++    install(
++        DIRECTORY 3rd_party/
++        TYPE INCLUDE
++    )
++
+     evc_setup_package(
+         NAME everest-ocpp
+         NAMESPACE everest
+@@ -80,7 +85,7 @@ if (OCPP_INSTALL)
+         ADDITIONAL_CONTENT
+             "find_dependency(OpenSSL)"
+             "find_dependency(SQLite3)"
+-            "find_dependency(websocketpp)"
++            "find_dependency(libwebsockets)"
+             "find_dependency(everest-timer)"
+             "find_dependency(everest-evse_security)"
+     )
