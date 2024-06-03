@@ -36,10 +36,12 @@ DEPENDS = "\
 
 FILES:${PN} += "${libdir}/everest/* ${datadir}/everest/*"
 
+# we need to set PYTHON_INCLUDE_DIRS explicity, otherwise the host python is found
 EXTRA_OECMAKE += "\
     -DDISABLE_EDM=ON \
     -DNO_FETCH_CONTENT=ON \
     -DPYTHON_MODULE_EXTENSION=.so \
     -DPYBIND11_PYTHONLIBS_OVERWRITE=OFF \
     -DEVEREST_INSTALL_ADMIN_PANEL=OFF \
+    -DPYTHON_INCLUDE_DIRS="${STAGING_INCDIR}/${PYTHON_DIR}${PYTHON_ABI}" \
 "
