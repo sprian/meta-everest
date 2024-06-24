@@ -1,13 +1,13 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "git://github.com/EVerest/everest-core.git;branch=bugfix/setup-ev-cli-macro-should-be-function;protocol=https \
+SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https \
            file://everest.service \
            "
 
 S = "${WORKDIR}/git"
 
-SRCREV = "e22709c83475b2736e37f98c46a2e7d0a0fa58ea"
+SRCREV = "3213f4ff80d69fcb80932439954f66af7f144c0a"
 
 do_compile[network] = "1"
 
