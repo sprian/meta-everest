@@ -7,7 +7,7 @@ SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https 
 
 S = "${WORKDIR}/git"
 
-SRCREV = "3213f4ff80d69fcb80932439954f66af7f144c0a"
+SRCREV = "b68f0d9318c94c174ebfd5cb1d34b5efb9d458aa"
 
 do_compile[network] = "1"
 
