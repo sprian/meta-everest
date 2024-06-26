@@ -29,7 +29,7 @@ S = "${WORKDIR}/poetry_core-${PV}"
 
 # FIXME (aw): because in kirkstone poetry install itself by using itself
 do_compile:prepend () {
-    ln -s ${S}/src/poetry ${S}/poetry
+    test -L ${S}/poetry || ln -s ${S}/src/poetry ${S}/poetry
 }
 
 SRC_URI += "file://deterministic.patch"
