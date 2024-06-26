@@ -3,7 +3,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
 SRC_URI = "git://github.com/EVerest/everest-cmake.git;branch=main;protocol=https"
 
-SRCREV = "1df4024203fbfb5363f7bc1a48d6bf53965f5a73"
+SRCREV = "d8d5e37d3f4a21ff136cc640ca68da2a5c8b62bc"
 
 S = "${WORKDIR}/git"
 

@@ -9,7 +9,7 @@ inherit pkgconfig
 
 S = "${WORKDIR}/git"
 
-SRCREV = "34d0b10e302dfe6dedae46cab72049697b0aefae"
+SRCREV = "06a22c26d52e92f97d199f063801413b7f3ee206"
 
 # FIXME (aw): due to nodejs dependency
 do_configure[network] = "1"
