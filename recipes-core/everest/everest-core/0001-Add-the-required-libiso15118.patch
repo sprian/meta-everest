@@ -1,0 +1,25 @@
+From 9ad5786e4c39b0c212195bd8ae7a4de297271fb4 Mon Sep 17 00:00:00 2001
+From: Mohannad Oraby <mohannad.oraby@chargebyte.com>
+Date: Sat, 29 Jun 2024 13:02:22 +0200
+Subject: [PATCH] Add the required libiso15118
+
+Signed-off-by: Mohannad Oraby <mohannad.oraby@chargebyte.com>
+---
+ CMakeLists.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 689a6bb9..7c7f6d03 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -94,6 +94,7 @@ else()
+     find_package(everest-modbus REQUIRED)
+     find_package(everest-ocpp REQUIRED)
+     find_package(cbv2g REQUIRED)
++    find_package(iso15118 REQUIRED)
+ 
+     find_package(PalSigslot REQUIRED)
+ 
+-- 
+2.25.1
+

@@ -1,0 +1,26 @@
+From 72c08a60527efd73323e9c3142358d4486796445 Mon Sep 17 00:00:00 2001
+From: Mohannad Oraby <mohannad.oraby@chargebyte.com>
+Date: Wed, 26 Jun 2024 16:11:38 +0200
+Subject: [PATCH] Add INSTALL option
+
+Signed-off-by: Mohannad Oraby <mohannad.oraby@chargebyte.com>
+---
+ CMakeLists.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 166dd3d..df8a4cf 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,6 +21,8 @@ option(ISO15118_LINK_CUSTOM_MBEDTLS "\
+ Link against a pinned mbedtls library\
+ " ON)
+ 
++option(ISO15118_INSTALL "Install the library (shared data might be installed anyway)" ${EVC_MAIN_PROJECT})
++
+ # dependencies
+ if (NOT DISABLE_EDM)
+     evc_setup_edm()
+-- 
+2.25.1
+
