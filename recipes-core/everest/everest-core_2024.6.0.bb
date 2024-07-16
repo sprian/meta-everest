@@ -1,17 +1,17 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https \
+SRC_URI = "git://github.com/EVerest/everest-core.git;branch=release/2024.6.0;protocol=https \
            file://everest.service \
            "
 
 S = "${WORKDIR}/git"
 
-SRCREV = "1f9433d9720fed232b8e4df321eaeb33a6baa04f"
+SRCREV = "e9d8f3912d9e834823c8ce6776148a8490a29f54"
 
 do_compile[network] = "1"
 
-inherit cmake pkgconfig systemd
+inherit cmake pkgconfig systemd python3native
 
 DEPENDS = " \
     everest-cmake \
@@ -30,19 +30,26 @@ DEPENDS = " \
     libslac \
     libevent \
     libevse-security \
+    libcbv2g \
     mbedtls \
-    openv2g \
     curl \
     sqlitecpp \
 "
 
-RDEPENDS:${PN} += "openv2g libevent mbedtls"
+RDEPENDS:${PN} += "libevent mbedtls"
 
 INSANE_SKIP:${PN} = "already-stripped useless-rpaths arch file-rdeps"
 
 FILES:${PN} += "${datadir}/everest/*"
 
-EXTRA_OECMAKE += "-DDISABLE_EDM=ON -DNO_FETCH_CONTENT=ON -DEVEREST_ENABLE_RUN_SCRIPT_GENERATION=OFF"
+EXTRA_OECMAKE += " \
+    -DDISABLE_EDM=ON \
+    -DNO_FETCH_CONTENT=ON \
+    -DEVEREST_ENABLE_RUN_SCRIPT_GENERATION=OFF \
+    -Deverest-core_INSTALL_EV_CLI_IN_PYTHON_VENV=OFF \
+    -Deverest-core_USE_PYTHON_VENV=OFF \
+    -DEV_SETUP_PYTHON_EXECUTABLE_USE_PYTHON_VENV=OFF \
+"
 
 SYSTEMD_SERVICE:${PN} = "everest.service"
 
