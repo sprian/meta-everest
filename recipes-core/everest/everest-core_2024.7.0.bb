@@ -31,12 +31,12 @@ DEPENDS = " \
     libevent \
     libevse-security \
     libcbv2g \
-    mbedtls \
+    openssl \
     curl \
     sqlitecpp \
 "
 
-RDEPENDS:${PN} += "libevent mbedtls"
+RDEPENDS:${PN} += "libevent openssl"
 
 INSANE_SKIP:${PN} = "already-stripped useless-rpaths arch file-rdeps"
 
@@ -49,6 +49,7 @@ EXTRA_OECMAKE += " \
     -Deverest-core_INSTALL_EV_CLI_IN_PYTHON_VENV=OFF \
     -Deverest-core_USE_PYTHON_VENV=OFF \
     -DEV_SETUP_PYTHON_EXECUTABLE_USE_PYTHON_VENV=OFF \
+    -DUSING_MBED_TLS=OFF \
 "
 
 SYSTEMD_SERVICE:${PN} = "everest.service"
