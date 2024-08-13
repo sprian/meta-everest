@@ -1,13 +1,13 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "git://github.com/EVerest/everest-core.git;branch=release/2024.6.0;protocol=https \
+SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https \
            file://everest.service \
            "
 
 S = "${WORKDIR}/git"
 
-SRCREV = "e9d8f3912d9e834823c8ce6776148a8490a29f54"
+SRCREV = "1cd809ce6c44aa898be4e4037e4e61dc503fdd3d"
 
 do_compile[network] = "1"
 
@@ -31,12 +31,12 @@ DEPENDS = " \
     libevent \
     libevse-security \
     libcbv2g \
-    mbedtls \
+    openssl \
     curl \
     sqlitecpp \
 "
 
-RDEPENDS:${PN} += "libevent mbedtls"
+RDEPENDS:${PN} += "libevent openssl"
 
 INSANE_SKIP:${PN} = "already-stripped useless-rpaths arch file-rdeps"
 
@@ -49,6 +49,7 @@ EXTRA_OECMAKE += " \
     -Deverest-core_INSTALL_EV_CLI_IN_PYTHON_VENV=OFF \
     -Deverest-core_USE_PYTHON_VENV=OFF \
     -DEV_SETUP_PYTHON_EXECUTABLE_USE_PYTHON_VENV=OFF \
+    -DUSING_MBED_TLS=OFF \
 "
 
 SYSTEMD_SERVICE:${PN} = "everest.service"
