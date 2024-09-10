@@ -11,3 +11,6 @@ SRCREV = "e41c6e62edfa67b6402b17a627dca698a14f47a8"
 S = "${WORKDIR}/git"
 
 inherit cmake
+
+# header only library
+ALLOW_EMPTY:${PN} = "1"
