@@ -13,4 +13,4 @@ S = "${WORKDIR}/git"
 inherit cmake
 
 # header only library
-ALLOW_EMPTY:${PN} = "1"
+RDEPENDS:${PN}-dev = ""
