@@ -31,7 +31,6 @@ DEPENDS = " \
     libevent \
     libevse-security \
     libcbv2g \
-    openssl \
     curl \
     sqlitecpp \
 "
@@ -49,10 +48,14 @@ EXTRA_OECMAKE += " \
     -Deverest-core_INSTALL_EV_CLI_IN_PYTHON_VENV=OFF \
     -Deverest-core_USE_PYTHON_VENV=OFF \
     -DEV_SETUP_PYTHON_EXECUTABLE_USE_PYTHON_VENV=OFF \
-    -DUSING_MBED_TLS=OFF \
 "
 
 SYSTEMD_SERVICE:${PN} = "everest.service"
+
+PACKAGECONFIG ??= "openssl"
+
+PACKAGECONFIG[mbedtls] = "-DUSING_MBED_TLS=ON,-DUSING_MBED_TLS=OFF,mbedtls,,,openssl"
+PACKAGECONFIG[openssl] = "-DUSING_MBED_TLS=OFF,-DUSING_MBED_TLS=ON,openssl,,,mbedtls"
 
 do_install:append() {
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
