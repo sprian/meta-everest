@@ -1,13 +1,15 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "git://github.com/EVerest/everest-core.git;branch=main;protocol=https \
-           file://everest.service \
-           "
+# SRCREV and SRC_URI is defined here because it's shared between
+# everest-core and everest-core-rust
+require everest-core.inc
+
+SRC_URI += "file://everest.service \
+            file://0001-add-dummy-token-provider-bank.patch \
+            "
 
 S = "${WORKDIR}/git"
-
-SRCREV = "5e967358322fabd34e66a34f2919588df3ebb33f"
 
 do_compile[network] = "1"
 
